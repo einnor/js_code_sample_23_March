@@ -19,3 +19,16 @@ function convertToUpper(){
   var upper = document.getElementById('myText').innerHTML
   document.getElementById('myText').innerHTML =  upper.toUpperCase();
 }
+
+
+//CODE SAMPLE FOR CUSTOM EVENTS
+ document.onload= function() {
+   document.body.addEventListener("myEventName", doSomething, false);
+
+   function doSomething(e) {
+       alert("Event is called: " + e.type);
+   }
+
+   var myEvent = new CustomEvent("myEventName");
+   document.body.dispatchEvent(myEvent);
+ };
